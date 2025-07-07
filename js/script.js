@@ -1,9 +1,26 @@
+// === DOM Elements ===
+const circleBgButton = document.querySelector('.circleBg-btn');
+const nav = document.querySelector('.nav');
+const toTopButtons = document.querySelectorAll('#toTop');
+const modal = document.querySelector('.product-modal');
+const modalCloseBtn = document.querySelector('.product-modal__close');
+const solutionLink = document.querySelector('#nav_solutions_link');
+const solutionBlock = document.querySelector('#nav_solutions');
+const aboutLink = document.querySelector('#nav_about_link');
+const aboutBlock = document.querySelector('#nav_about');
+const logoImg = document.querySelector('.nav__logo img');
+let isModalOpened = false;
+let isSubmenuOpened = false;
+const page = window.location.pathname;
+const isPhone = window.matchMedia('(max-width: 768px)').matches;
+
+
 // === Configuration & Helpers ===
 const dragSwiper = (selector, args = {}) => {
     const defaultArgs = {
         direction: 'horizontal',
         slidesPerView: 'auto',
-        spaceBetween: 40,
+        spaceBetween: !isPhone ? 40 : 8,
         centeredSlidesBounds: true,
         resistanceRatio: 0,
         touchReleaseOnEdges: true,
@@ -20,36 +37,25 @@ const dragSwiper = (selector, args = {}) => {
 };
 
 // === Smooth Scrolling (Lenis) ===
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-});
-const raf = time => {
-    lenis.raf(time);
+if (!isPhone) {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    const raf = time => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    };
     requestAnimationFrame(raf);
-};
-requestAnimationFrame(raf);
-
-// === DOM Elements ===
-const getStartedButton = document.querySelector('.get-started__button');
-const nav = document.querySelector('.nav');
-const toTopButtons = document.querySelectorAll('#toTop');
-const modal = document.querySelector('.product-modal');
-const modalCloseBtn = document.querySelector('.product-modal__close');
-const solutionLink = document.querySelector('#nav_solutions_link');
-const solutionBlock = document.querySelector('#nav_solutions');
-const aboutLink = document.querySelector('#nav_about_link');
-const aboutBlock = document.querySelector('#nav_about');
-let isModalOpened = false;
-let isSubmenuOpened = false;
+}
 
 // === Get Started Button Hover Effects ===
-if (getStartedButton) {
-    getStartedButton.addEventListener('mouseenter', () => {
-        setTimeout(() => getStartedButton.classList.add('_hover-wait'), 300);
+if (circleBgButton) {
+    circleBgButton.addEventListener('mouseenter', () => {
+        setTimeout(() => circleBgButton.classList.add('_hover-wait'), 300);
     });
-    getStartedButton.addEventListener('mouseleave', () => {
-        setTimeout(() => getStartedButton.classList.remove('_hover-wait'), 200);
+    circleBgButton.addEventListener('mouseleave', () => {
+        setTimeout(() => circleBgButton.classList.remove('_hover-wait'), 200);
     });
 }
 
@@ -57,12 +63,17 @@ if (getStartedButton) {
 const toggleNav = ({ deltaY }) => {
     if (isModalOpened) return;
 
-    const logoImg = nav.querySelector('.nav__logo img');
-    logoImg.src = './assets/logo_black.svg';
+    if (!isPhone) {
+        logoImg.src = '/assets/logo_black.svg';        
+    };
+    if (isPhone) {
+        document.querySelector('.nav__phone img').src = '/assets/logo_black.svg';
+    }
     const scrollPos = window.scrollY + deltaY;
 
-    if (scrollPos <= 60 && !isSubmenuOpened) {
-        logoImg.src = './assets/logo_white.svg';
+    if (scrollPos <= 60 && !isSubmenuOpened && page == '/') {
+        logoImg.src = '/assets/logo_white.svg';
+        document.querySelector('.nav__phone img').src = '/assets/logo_white.svg';
         nav.classList.remove('active', 'hidden');
     } else if (scrollPos < window.innerHeight * 0.5) {
         nav.classList.add('active');
@@ -102,7 +113,7 @@ function initProductsSlider(products, selector) {
           <i class="product__icon-img fas fa-arrow-right"></i>
         </div>
         <div class="product__preview">
-          <img src="./assets/products/${key}.png" class="product__img">
+          <img src="/assets/products/${key}.png" class="product__img">
         </div>
         <div class="product__info">
           <div class="product__title">${product.title}</div>
@@ -137,7 +148,7 @@ function openProductModal(key) {
         product.features.map(f => `<li>${f}</li>`).join('');
     modal.querySelector('#modal_applications').innerHTML =
         product.applications.map(a => `<li>${a}</li>`).join('');
-    modal.querySelector('img').src = `./assets/products/${key}.png`;
+    modal.querySelector('img').src = `/assets/products/${key}.png`;
     modal.classList.remove('hidden');
 }
 
@@ -182,3 +193,13 @@ function setupSubmenu(link, block) {
 
 setupSubmenu(solutionLink, solutionBlock);
 setupSubmenu(aboutLink, aboutBlock);
+
+if (isPhone) {
+    document.querySelector('#nav_open').onclick = () => {
+        nav.classList.add('opened');
+    }
+
+    document.querySelector('#nav_close').onclick = () => {
+        nav.classList.remove('opened');
+    }
+}

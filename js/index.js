@@ -47,8 +47,14 @@ function toggleHelpTab(tab, isTime = false) {
 
 let interval = 0;
 
-interval = setInterval(() => {
-    if (true) {
+if (!isPhone) {
+    helpTab_links.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleHelpTab(link.dataset.tab);
+            clearInterval(interval)
+        })
+    })
+    interval = setInterval(() => {
         const currentActive = document.querySelector('.help__link.active');
         let nextTab = '';
         if (currentActive.nextElementSibling) {
@@ -58,19 +64,12 @@ interval = setInterval(() => {
         }
         toggleHelpTab(nextTab, true);
         time = 0;
-    };
-}, 5000);
+    }, 5000);
+    toggleHelpTab('expertise', true)
+}
 
 
 
-helpTab_links.forEach(link => {
-    link.addEventListener('click', () => {
-        toggleHelpTab(link.dataset.tab);
-        clearInterval(interval)
-    })
-})
-
-toggleHelpTab('expertise', true)
 
 
 const productsSlider = initProductsSlider(products, '.products-slider')
@@ -82,9 +81,9 @@ for (let i = 1; i <= partner_count; i++) {
     const partnerElement = document.createElement('div');
     partnerElement.className = 'partners__slide swiper-slide partner';
     partnerElement.innerHTML = `
-        <img src="./assets/partners/${i}.png" class="partner__img">
+        <img src="/assets/partners/${i}.png" class="partner__img">
         <div class="partner__logo-wrapper">
-            <img src="./assets/partners/${i}.logo.png" class="partner__logo" alt="">
+            <img src="/assets/partners/${i}.logo.png" class="partner__logo" alt="">
         </div>
     `;
 
