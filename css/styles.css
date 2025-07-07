@@ -1,7 +1,7 @@
 /* ============================  GENERAL  ============================ */
 
 .start-frame {
-    display: none;
+    /* display: none; */
     /* TODO */
     position: fixed;
     bottom: -48vh;
@@ -27,13 +27,13 @@
 }
 
 /* TODO */
-/* .header__title,
+.header__title,
 .header__subtitle,
 .solutions-button,
 .header__note {
     opacity: 0;
     transform: translateY(1em)
-} */
+}
 
 /* TODO */
 /* .header__title,
