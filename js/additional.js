@@ -93,10 +93,10 @@ function initPersons(teamElement, data, basePath) {
 
             swiper.appendSlide(slides);
             swiper.update();
-            
+
             setTimeout(() => {
                 const newSlides = Array.from(swiper.slides);
-                
+
                 newSlides.forEach(slide => {
                     slide.classList.remove('_hidden');
                 });
@@ -127,4 +127,27 @@ function initPersons(teamElement, data, basePath) {
     }
 
     return swiper;
+}
+
+
+function initPartnersGrid() {
+    const partnersCategories = document.querySelector('[data-type="partnersGrid_category"]').querySelectorAll('button');
+    const partnerImgs = document.querySelector('[data-type="partnersGrid_imgs"]').querySelectorAll('img');
+    const description = document.querySelector('.partners__description');
+    partnersCategories.forEach(el => {
+        el.addEventListener('click', () => {
+            partnersCategories.forEach(el => el.classList.remove('active'));
+            partnerImgs.forEach(el => el.classList.remove('active'));
+            document.querySelectorAll(`[data-category="${el.dataset.category}"]`).forEach(el => el.classList.add('active'));
+            description.classList.add('hidden');
+            setTimeout(() => {
+                description.querySelector('.section-subtitle').innerHTML = aboutPartners[el.dataset.category][0];
+                description.querySelector('.section-text').innerHTML = aboutPartners[el.dataset.category][1];
+                setTimeout(() => {
+                    description.classList.remove('hidden');
+                }, 310);
+            }, 310);
+        })
+    })
+    partnersCategories[0].click();
 }

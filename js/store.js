@@ -307,55 +307,158 @@ const workplaceBenefits = [
     }
 ]
 
+
 const aboutPersons = [
     {
-        'name': 'Giles Desforges',
-        'post': 'Chief Executive Officer',
-        'category': 'leadership'
+        name: 'Giles Desforges',
+        post: 'Chief Executive Officer',
+        category: 'leadership'
     },
     {
-        'name': 'Gavin Malone',
-        'post': 'Founder & Chief Operating Officer',
-        'category': 'leadership'
+        name: 'Gavin Malone',
+        post: 'Founder & Chief Operating Officer',
+        category: 'leadership'
     },
     {
-        'name': 'Adam Grant',
-        'post': 'Chief Financial Officer',
-        'category': 'leadership'
+        name: 'Adam Grant',
+        post: 'Chief Financial Officer',
+        category: 'leadership'
     },
     {
-        'name': 'George Lipczynski',
-        'post': 'Investment Manager, Zouk Capital',
-        'category': 'leadership'
+        name: 'George Lipczynski',
+        post: 'Investment Manager, Zouk Capital',
+        category: 'leadership'
     },
     {
-        'name': 'George Ridd',
-        'post': 'Partner, Zouk Capital',
-        'category': 'leadership'
+        name: 'George Ridd',
+        post: 'Partner, Zouk Capital',
+        category: 'leadership'
     },
     {
-        'name': 'Chris White',
-        'post': 'Non-Executive Director',
-        'category': 'leadership'
+        name: 'Chris White',
+        post: 'Non-Executive Director',
+        category: 'leadership'
     },
     {
-        'name': 'Catherine Gabriel',
-        'post': 'Head of Customer Success',
-        'category': 'customer-services'
+        name: 'Catherine Gabriel',
+        post: 'Head of Customer Success',
+        category: 'customer-services'
     },
     {
-        'name': 'Sarah Guy',
-        'post': 'Customer Service Advisor',
-        'category': 'customer-services'
+        name: 'Sarah Guy',
+        post: 'Customer Service Advisor',
+        category: 'customer-services'
     },
     {
-        'name': 'Mayella Zorzin',
-        'post': 'Customer Service Advisor',
-        'category': 'customer-services'
+        name: 'Mayella Zorzin',
+        post: 'Customer Service Advisor',
+        category: 'customer-services'
     },
     {
-        'name': '',
-        'post': '',
-        'category': 'customer-services'
+        name: 'Toby Crane-Buck',
+        post: 'Head of Commercial',
+        category: 'sales-marketing'
     },
-]
+    {
+        name: 'Mat Peters',
+        post: 'Senior Business Development Manager',
+        category: 'sales-marketing'
+    },
+    {
+        name: 'Miranda Flack',
+        post: 'Head of Brand & Communications',
+        category: 'sales-marketing'
+    },
+    {
+        name: 'Leah Hickman',
+        post: 'Commercial Executive',
+        category: 'sales-marketing'
+    },
+    {
+        name: 'Aaron Yule',
+        post: 'Head of EV Infrastructure',
+        category: 'installations'
+    },
+    {
+        name: 'Barry Nichols',
+        post: 'Lead Surveyor',
+        category: 'installations'
+    },
+    {
+        name: 'Mike Pearson',
+        post: 'Programme Manager',
+        category: 'installations'
+    },
+    {
+        name: 'Alex Brown',
+        post: 'Programme Manager',
+        category: 'installations'
+    },
+    {
+        name: 'Ricky Trewick',
+        post: 'Programme Manager',
+        category: 'installations'
+    },
+    {
+        name: 'Marcus Rowbotham',
+        post: 'Design Manager',
+        category: 'installations'
+    },
+    {
+        name: 'Chelsea Albers',
+        post: 'Programme Coordinator',
+        category: 'installations'
+    },
+    {
+        name: 'Tia Slade',
+        post: 'Programme Coordinator',
+        category: 'installations'
+    },
+    {
+        name: 'John Esin',
+        post: 'Computer Aided Design Technician',
+        category: 'installations'
+    },
+    {
+        name: 'Andrew Milne',
+        post: 'Head of Compliance',
+        category: 'central-services'
+    },
+    {
+        name: 'Annabel Moore',
+        post: 'Executive Assistant',
+        category: 'central-services'
+    },
+    {
+        name: 'James Gifford',
+        post: 'Analyst',
+        category: 'central-services'
+    },
+    {
+        name: 'Kate Nicol',
+        post: 'Office Manager',
+        category: 'central-services'
+    },
+];
+
+const aboutPartners = {
+    partners: [
+        'We partner with the best',
+        'We’ve teamed up with leading businesses to provide a comprehensive service for installing and operating EV charge points across residential sites, including apartment buildings, holiday parks and hotels.'
+    ],
+    charity: [
+        'Proud to support charities',
+        'We’re proud to be Great Ormond Street Hospital Charity’s EV partner, creating solutions that help to drive donations towards lifesaving research projects and support programmes for families and staff.'
+    ],
+    hardware: [
+        "We're approved installers of hardware",
+        'We have close relationships with our equipment partners, which means we are well informed about new product sets and installation methods, and that we can provide you with the best options available.'
+    ]
+};
+
+
+const how_find_best_solution = {
+    'listen': ['We listen carefully', "Our experienced team will listen carefully to the requirements of your end-users and what you’re looking to achieve by installing EV charge points."],
+    'research': ['We do our research', 'Our team will carry out a full site visit and complete a review of the electricity supply to calculate the capacity available for charge points.'],
+    'design': ['We create a bespoke design', "Based on our conversations and site visit, we’ll create a scheme design that meets the needs of your site and end-users."]
+}

@@ -209,7 +209,7 @@ header {
 .question__title {
   font-size: var(--fs-h4);
   max-width: 60%;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .question i {

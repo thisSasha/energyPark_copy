@@ -9,13 +9,13 @@
     --color-disabled: #acb3b7;
 
     --font-main: 'Manrope';
-    --fs-nav: 16px;
+    --fs-nav: 20px;
     --fs-btn: 20px;
     --fs-h1: 128px;
-    --fs-h2: 60px;
+    --fs-h2: 68px;
     --fs-h3: 52px;
     --fs-h4: 36px;
-    --fs-body: 20px;
+    --fs-body: 22px;
 
     --btn-w: 360px;
     --btn-h: 88px;
@@ -600,13 +600,13 @@ footer hr {
 .product__title {
     margin-top: 18px;
     font-size: var(--fs-btn);
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 6px
 }
 
 .product__subtitle {
     font-size: var(--fs-btn);
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-disabled)
 }
 

@@ -5,7 +5,7 @@
 .header__note {
     animation-delay: 3.3s;
 }
-    
+
 @keyframes openFrame {
     from {
         bottom: -48vh
@@ -90,7 +90,7 @@ header {
 
 .solutions__title {
     font-size: var(--fs-body);
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 48px
 }
 
@@ -194,7 +194,7 @@ header {
 
 .help__title {
     font-size: var(--fs-body);
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 88px
 }
 
