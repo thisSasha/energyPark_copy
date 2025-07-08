@@ -62,20 +62,69 @@ function initQuestionsGrid(wrapper, data) {
         wrapper.appendChild(row);
     });
 }
+function initPersons(teamElement, data, basePath) {
+    const categoriesContainer = teamElement.querySelector('.team__categories');
+    const wrapperEl = teamElement.querySelector('#persons_wrapper');
+    const swiperContainer = teamElement.querySelector('.persons-slider');
 
-function initPersons(wrapper, data) {
-    data.forEach(person => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide person';
-        slide.innerHTML = `
-            <img src="${person.img}" alt="" class="person__img">
-            <div class="person__info">
-                <h3 class="person__name">${person.name}</h3>
-                <p class="person__post">${person.post}</p>
-            </div>
-        `;
-        swiper.appendSlide(slide);
+    const swiper = dragSwiper(swiperContainer)
+
+    function renderSlides(filteredData) {
+        const currentSlides = Array.from(swiper.slides);
+
+        currentSlides.forEach(slide => {
+            slide.classList.add('_hidden');
+        });
+
+        setTimeout(() => {
+            swiper.removeAllSlides();
+
+            const slides = filteredData.map(person => {
+                const imgSrc = `${basePath}${person.category}/${person.name}.png`;
+                return `
+                <div class="swiper-slide person _hidden" data-category="${person.category}">
+                    <img src="${imgSrc}" alt="${person.name}" class="person__img">
+                    <div class="person__info">
+                        <h3 class="person__name">${person.name}</h3>
+                        <p class="person__post">${person.post}</p>
+                    </div>
+                </div>`;
+            });
+
+            swiper.appendSlide(slides);
+            swiper.update();
+            
+            setTimeout(() => {
+                const newSlides = Array.from(swiper.slides);
+                
+                newSlides.forEach(slide => {
+                    slide.classList.remove('_hidden');
+                });
+            }, 350);
+        }, 350);
+    }
+
+    categoriesContainer.addEventListener('click', e => {
+        if (!e.target.classList.contains('team__category')) return;
+        categoriesContainer.querySelectorAll('.team__category')
+            .forEach(btn => btn.classList.remove('team__category_active'));
+        e.target.classList.add('team__category_active');
+
+        const category = e.target.dataset.category;
+        const filtered = category
+            ? data.filter(person => person.category === category)
+            : data;
+        renderSlides(filtered);
     });
-    const swiper = dragSwiper('#' + wrapper.querySelector('.swiper').id, {})
-    return swiper
+
+    const firstBtn = categoriesContainer.querySelector('.team__category');
+    if (firstBtn) {
+        firstBtn.classList.add('team__category_active');
+        const initCategory = firstBtn.dataset.category;
+        renderSlides(data.filter(p => p.category === initCategory));
+    } else {
+        renderSlides(data);
+    }
+
+    return swiper;
 }

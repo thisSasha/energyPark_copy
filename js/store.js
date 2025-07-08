@@ -258,7 +258,7 @@ const hotelsBenefits = [
     {
         subtitle: 'Maintain a uniform look',
         text: 'Using one EV charge point supplier will help to maintain a smart, consistent look around your site. A less uniform approach could undermine the site’s visual appeal.'
-    }    
+    }
 ]
 
 
@@ -305,4 +305,57 @@ const workplaceBenefits = [
         subtitle: 'Boost your reputation',
         text: 'With climate change high on today’s agenda, providing charge point access at your workplace demonstrates your commitment to sustainability to both customers and staff.'
     }
+]
+
+const aboutPersons = [
+    {
+        'name': 'Giles Desforges',
+        'post': 'Chief Executive Officer',
+        'category': 'leadership'
+    },
+    {
+        'name': 'Gavin Malone',
+        'post': 'Founder & Chief Operating Officer',
+        'category': 'leadership'
+    },
+    {
+        'name': 'Adam Grant',
+        'post': 'Chief Financial Officer',
+        'category': 'leadership'
+    },
+    {
+        'name': 'George Lipczynski',
+        'post': 'Investment Manager, Zouk Capital',
+        'category': 'leadership'
+    },
+    {
+        'name': 'George Ridd',
+        'post': 'Partner, Zouk Capital',
+        'category': 'leadership'
+    },
+    {
+        'name': 'Chris White',
+        'post': 'Non-Executive Director',
+        'category': 'leadership'
+    },
+    {
+        'name': 'Catherine Gabriel',
+        'post': 'Head of Customer Success',
+        'category': 'customer-services'
+    },
+    {
+        'name': 'Sarah Guy',
+        'post': 'Customer Service Advisor',
+        'category': 'customer-services'
+    },
+    {
+        'name': 'Mayella Zorzin',
+        'post': 'Customer Service Advisor',
+        'category': 'customer-services'
+    },
+    {
+        'name': '',
+        'post': '',
+        'category': 'customer-services'
+    },
 ]
