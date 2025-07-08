@@ -16,6 +16,18 @@ const products = {
         'features': ['Up to 7.4kW charging speed', 'Ethernet, 4G or Wi-Fi connectivity', 'Power balancing capability built in', 'Solar compatible'],
         'applications': ['Holiday parks']
     },
+
+    'easee_one': {
+        'title': 'Easee One',
+        'subtitle': 'Up to 7.4kW charging speed',
+        'description': `This device has superb app functionality to give you full control over your charge point.
+
+Additional units can be installed to work in a cluster arrangement, making it ideal for homes with more than one electric vehicle. You can choose from five different cover colours when you select this futuristic-looking device.`,
+        'manufacters_standart': '3-year',
+        'features': ['Up to 7.4kW charging speed', '4G LTE-M or Wi-Fi connectivity', 'Ability to add further devices'],
+        'applications': ['Holiday parks']
+    },
+
     'eo_genius_2': {
         'title': 'EO Genius 2',
         'subtitle': '7.2kW and 22kW variants',
@@ -109,3 +121,188 @@ const how_we_can_help = {
 }
 
 const partner_count = 6;
+
+const apartmentDelivers = [
+    {
+        subtitle: 'Cost-efficient solutions',
+        text: 'We offer property owners fully funded solutions with no upfront capital required, ensuring cost-free installation for you and your residents.'
+    },
+    {
+        subtitle: 'Proactive support',
+        text: 'We work closely with you throughout the entire process, offering expert guidance to ensure the EV charging infrastructure meets your unique needs and goals.'
+    },
+    {
+        subtitle: 'A fully managed service',
+        text: 'We take care of all ongoing operations, eliminating the need for you to manage day-to-day tasks or invest in additional resource.'
+    },
+    {
+        subtitle: 'Future-proof designs',
+        text: 'Every Energy Park installation is thoughtfully designed by our in-house design team to support rising EV ownership and evolving energy needs.'
+    },
+    {
+        subtitle: 'Added value',
+        text: 'Installing uniform EV charging infrastructure will add value to your sites and boost their appeal to future tenants.'
+    },
+    {
+        subtitle: 'Guaranteed expertise',
+        text: "Energy Park is backed by the UK Government's Charging Infrastructure Investment Fund (CIIF) and brings together a team of highly trained professionals to deliver best-in-class EV charging solutions."
+    }
+]
+
+const apartmentResidents = [
+    {
+        subtitle: 'Low-cost charging',
+        text: 'Your residents will receive competitive home charging pricing without any costs for installation, maintenance or testing.'
+    },
+    {
+        subtitle: 'Convenience and flexibility',
+        text: 'With EV charging on their doorstep, residents will have the freedom to charge their vehicle at home whenever they need to.'
+    },
+    {
+        subtitle: 'Fast, efficient charging',
+        text: 'With charging up to 22kW, residents can relax knowing that their vehicle will charge quickly and efficiently.'
+    },
+    {
+        subtitle: 'Good accessibility',
+        text: 'Our charge points are proactively maintained with any faults detected and fixed quickly, keeping them accessible and ready to use.'
+    }
+]
+
+const apartmentProductsIds = ['zaptec_pro', 'easee_charge'];
+const apartmentProducts = apartmentProductsIds.reduce((acc, id) => {
+    if (products[id]) acc[id] = products[id];
+    return acc;
+}, {});
+const apartmentQuestions = [
+    {
+        'title': 'Do you offer a funded solution for residential landlords?',
+        'answer': `Yes, for residential landlords we offer a fully funded, maintained and managed EV charging solution.<br><br><a href="/contact" class="underline-anim">Get in touch</a> to find out more.`
+    },
+    {
+        'title': 'Will the EV charge points work with every electric vehicle?',
+        'answer': `Yes, the EV charge point connecters we use are compatible with all new electric vehicles currently available in the UK.`
+    },
+    {
+        'title': 'How do you know there will be sufficient electrical capacity for the EV charge points at my residential site?',
+        'answer': `Before we install your EV charge points, we’ll visit your site to get a full understanding of your site’s electrical capacity. Once we’ve installed your charge points, we’ll then monitor your usage on our online platform and distribute electricity to the charge points in a smart and balanced way.`
+    },
+    {
+        'title': 'Can you help with the ongoing management and maintenance of the EV charge points?',
+        'answer': `Yes, we provide ongoing maintenance, as well as service support for you and customer support for drivers. We’ll carry out periodic testing, and if issues arise that can’t be rectified remotely, we’ll send a technician to the site.`
+    }
+]
+
+
+
+const holidayParksProductsIds = ['easee_one', 'eo_mini_pro_3', 'zaptec_go', 'eo_genius_2'];
+const holidayParksProducts = holidayParksProductsIds.reduce((acc, id) => {
+    if (products[id]) acc[id] = products[id];
+    return acc;
+}, {});
+const holidayParksQuestions = [
+    {
+        'title': 'Can you recommend which charge point to use?',
+        'answer': `Yes, once we’ve received your survey response and spoken to you via our video consultation, we’ll recommend the best charge point to suit your needs.`
+    },
+    {
+        'title': 'How can I get a quote from you?',
+        'answer': `To get started, fill out our form on our contact page <a href="/contact" class="section-subtitle">here</a>. We’ll send you an online survey to fill in so we can understand more about your property, and then we’ll be in touch to arrange a video consultation to give you more detail on our pricing and installation process.`
+    }
+]
+
+const hotelsProductsIds = ['zaptec_pro', 'easee_charge', 'eo_genius_2'];
+const hotelsProducts = hotelsProductsIds.reduce((acc, id) => {
+    if (products[id]) acc[id] = products[id];
+    return acc;
+}, {});
+const hotelsQuestions = [
+    {
+        'title': 'Will the EV charge points work with every electric vehicle?',
+        'answer': `Yes, the EV charge point connecters we use are compatible with all new electric vehicles currently available in the UK.`
+    },
+    {
+        'title': 'How do you know there will be sufficient electrical capacity for the EV charge points at my site?',
+        'answer': `Before we install your EV charge points, we’ll visit your site to get a full understanding of your site’s electrical capacity. Once we’ve installed your EV charge points, we’ll then monitor your usage on our online platform and distribute electricity to the charge points in a smart and balanced way.`
+    },
+    {
+        'title': 'Can guests see if we provide EV charge point facilities before they visit?',
+        'answer': `Yes, you can make your EV charge points visible on maps. This will help to inform your current customers, as well attracting more potential customers looking for a place to charge.`
+    },
+    {
+        'title': 'Can I generate revenue from the EV charge points?',
+        'answer': `Yes, you can set your desired tariff to cover the cost of the electricity and generate additional revenue.`
+    },
+    {
+        'title': 'Can you help with the ongoing management and maintenance of the EV charge points?',
+        'answer': `Yes, via our cloud-based software platform we can provide ongoing maintenance, as well as service support for you and customer support for drivers. We’ll carry out in-person periodic testing, and if issues arise that can’t be rectified remotely, we’ll send a technician to the site.`
+    },
+    {
+        'title': 'How can I get a quote from you?',
+        'answer': `To get started, fill out our form on our contact page <a href="/contact" class="section-subtitle">here</a>. We’ll send you a quick online survey to fill in so we can understand more about your site, and then we’ll be in touch to give you more detail on our pricing and installation process.`
+    }
+]
+
+const hotelsBenefits = [
+    {
+        subtitle: 'Attract more customers',
+        text: 'By making your EV charge points visible on maps, you’ll attract more people looking for a hotel with charging facilities. And you could even choose to offer free charging as an incentive.'
+    },
+    {
+        subtitle: 'Generate revenue',
+        text: 'Charging fees for the use of your EV charge points can quickly create an additional revenue stream. This will soon cover the costs of installation and generate ongoing revenue.'
+    },
+    {
+        subtitle: 'Hit sustainability targets',
+        text: 'Reach your sustainability targets while boosting your company’s image and reputation.'
+    },
+    {
+        subtitle: 'Maintain a uniform look',
+        text: 'Using one EV charge point supplier will help to maintain a smart, consistent look around your site. A less uniform approach could undermine the site’s visual appeal.'
+    }    
+]
+
+
+
+const workplaceProductsIds = ['Zaptec Pro', 'eo_genius_2', 'Easee Charge', 'Easee One'];
+const workplaceProducts = workplaceProductsIds.reduce((acc, idx) => {
+    id = idx.toLowerCase().replace(' ', '_');
+    if (products[id]) acc[id] = products[id];
+    return acc;
+}, {});
+const workplaceQuestions = [
+    {
+        'title': 'Will the EV charge points work with every electric vehicle?',
+        'answer': `Yes, the EV charge point connectors we use are compatible with all new electric vehicles currently available in the UK.`
+    },
+    {
+        'title': 'How do you know there will be sufficient electrical capacity for the EV charge points at my workplace?',
+        'answer': `Before we install your EV charge points, we’ll visit your site to get a full understanding of your site’s electrical capacity. Once we’ve installed your charge points, we’ll then monitor your usage on our online platform and distribute electricity to the charge points in a smart and balanced way.`
+    },
+    {
+        'title': 'How can I control who uses the EV charge points?',
+        'answer': `You can either open up the EV charge points for use by all staff and visitors to your site, or you can use a key to allow access to authorised drivers only. You can also choose to issue approved drivers with an RFID (Radio Frequency Identification) access card.`
+    },
+    {
+        'title': 'Can you help with the ongoing management and maintenance of the EV charge points?',
+        'answer': `Yes, via our cloud-based software platform we can provide ongoing maintenance, as well as service support for you and customer support for drivers. We’ll carry out in-person periodic testing, and if issues arise that can’t be rectified remotely, we’ll send a technician to your site.`
+    },
+    {
+        'title': 'How can I get a quote from you?',
+        'answer': `To get started, fill out our form on our contact page <a href="/contact" class="section-subtitle">here</a>. We’ll send you a quick online survey to fill in so we can understand more about your site, and then we’ll be in touch to give you more details on our pricing and installation process.`
+    }
+]
+
+const workplaceBenefits = [
+    {
+        subtitle: 'Boost recruitment',
+        text: 'Providing workplace charging will show your commitment to employees, increase staff satisfaction and help to attract the best future candidates.'
+    },
+    {
+        subtitle: 'Hit sustainability targets',
+        text: 'Reducing the environmental impact of your employees’ commute will help you achieve your sustainability goals.'
+    },
+    {
+        subtitle: 'Boost your reputation',
+        text: 'With climate change high on today’s agenda, providing charge point access at your workplace demonstrates your commitment to sustainability to both customers and staff.'
+    }
+]

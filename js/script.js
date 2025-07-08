@@ -1,5 +1,5 @@
 // === DOM Elements ===
-const circleBgButton = document.querySelector('.circleBg-btn');
+const circleBgButtons = document.querySelectorAll('.circleBg-btn');
 const nav = document.querySelector('.nav');
 const toTopButtons = document.querySelectorAll('#toTop');
 const modal = document.querySelector('.product-modal');
@@ -13,7 +13,34 @@ let isModalOpened = false;
 let isSubmenuOpened = false;
 const page = window.location.pathname;
 const isPhone = window.matchMedia('(max-width: 768px)').matches;
+const relaxes = document.querySelectorAll('.rellax');
+let scrollImgs = document.querySelectorAll('img.scroll');
+const scrollConstVhs = 0.20;
+const scrollConst = window.innerHeight * scrollConstVhs;
 
+
+function initScrollImgs() {
+    scrollImgs = document.querySelectorAll('img.scroll');
+}
+
+// === Rellax ===
+relaxes.forEach(el => {
+    new Rellax(el, {
+        center: true,
+    });
+});
+
+window.addEventListener('scroll', () => {
+    let a = 0
+    scrollImgs.forEach(img => {
+        const imgBottom = img.getBoundingClientRect().bottom;
+        const viewportHeight = window.innerHeight;
+
+        if (imgBottom - viewportHeight <= -scrollConst) {
+            img.classList.add('active');
+        }
+    });
+});
 
 // === Configuration & Helpers ===
 const dragSwiper = (selector, args = {}) => {
@@ -50,21 +77,21 @@ if (!isPhone) {
 }
 
 // === Get Started Button Hover Effects ===
-if (circleBgButton) {
+circleBgButtons.forEach(circleBgButton => {
     circleBgButton.addEventListener('mouseenter', () => {
         setTimeout(() => circleBgButton.classList.add('_hover-wait'), 300);
     });
     circleBgButton.addEventListener('mouseleave', () => {
         setTimeout(() => circleBgButton.classList.remove('_hover-wait'), 200);
     });
-}
+})
 
 // === Navigation Toggle ===
 const toggleNav = ({ deltaY }) => {
     if (isModalOpened) return;
 
     if (!isPhone) {
-        logoImg.src = '/assets/logo_black.svg';        
+        logoImg.src = '/assets/logo_black.svg';
     };
     if (isPhone) {
         document.querySelector('.nav__phone img').src = '/assets/logo_black.svg';

@@ -328,4 +328,44 @@
     .footer__note {
         padding-bottom: 20px;
     }
+
+    .product .product__icon {
+        transform: scale(1)
+    }
+
+    .product .product__icon-img {
+        transform: translateX(0)
+    }
+
+    .product-modal {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        flex-direction: column;
+    }
+
+    .product-modal__info {
+        padding: 0 12px;
+    }
+
+    .product-modal {
+        overflow: scroll;
+    }
+
+    .product-modal hr {
+        display: none;
+    }
+
+    .product-modal__block {
+        flex-direction: column;
+        border: 0;
+    }
+
+    .product-modal__block>*:first-child {
+        flex: 0 0 auto;
+    }
+
+    .product-modal__block {
+        margin-top: 60px;
+    }
 }

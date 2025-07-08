@@ -45,6 +45,33 @@
     text-decoration: none;
 }
 
+
+.start-frame {
+    /* display: none; */
+    /* TODO */
+    position: fixed;
+    bottom: -48vh;
+    left: 30vw;
+    width: 40vw;
+    height: 48vh;
+    background: transparent;
+    border-radius: 16px;
+    z-index: 200;
+    animation: openFrame 3.2s cubic-bezier(0.72, 1, 0.61, 0.02) forwards;
+}
+
+.start-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 0 100vmax var(--color-bg);
+    pointer-events: none;
+}
+
 .swiper,
 .swiper * {
     user-select: none;
@@ -132,6 +159,11 @@ body.overflow-hidden {
     height: 100%;
     right: calc(var(--btn-pad-h)*-1);
     border-radius: 100vw;
+}
+
+.underline-anim {
+    position: relative;
+    width: max-content;
 }
 
 .underline-anim::after {
@@ -346,6 +378,7 @@ nav.hidden {
 
 .section-grid>p {
     margin-top: 24px;
+    margin-right: 120px;
 }
 
 .section-grid h2 {
@@ -509,7 +542,7 @@ footer hr {
 
 
 /* ============================  PRODUCTS  =========================== */
-.products-slider {
+.drag-slider {
     position: relative;
     max-width: 100vw;
     padding: 0 20px;
@@ -520,7 +553,7 @@ footer hr {
     --swiper-navigation-color: var(--color-fg);
 }
 
-.products-slider::-webkit-scrollbar {
+.drag-slider::-webkit-scrollbar {
     display: none
 }
 
@@ -590,31 +623,31 @@ footer hr {
     transform: translateX(0)
 }
 
-.products-slider .swiper-wrapper {
+.drag-slider .swiper-wrapper {
     padding-left: 40px;
     padding-right: 40px;
 }
 
-.products-slider .swiper-pagination {
+.drag-slider .swiper-pagination {
     position: relative !important;
     margin-top: 100px;
     width: 80vw !important;
     margin-left: 3vw;
 }
 
-.products-slider .swiper-button-prev,
-.products-slider .swiper-button-next {
+.drag-slider .swiper-button-prev,
+.drag-slider .swiper-button-next {
     --swiper-navigation-size: 24px;
     bottom: 0 !important;
     left: auto !important;
     top: auto !important;
 }
 
-.products-slider .swiper-button-prev {
+.drag-slider .swiper-button-prev {
     right: 100px !important
 }
 
-.products-slider .swiper-button-next {
+.drag-slider .swiper-button-next {
     right: 60px !important
 }
 
