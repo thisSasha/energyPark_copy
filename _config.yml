@@ -1,0 +1,4 @@
+exclude:
+  - "README.md"
+  - ".gitignore"
+  - "data/NEW-TEMPLATE"
