@@ -462,3 +462,14 @@ const how_find_best_solution = {
     'research': ['We do our research', 'Our team will carry out a full site visit and complete a review of the electricity supply to calculate the capacity available for charge points.'],
     'design': ['We create a bespoke design', "Based on our conversations and site visit, we’ll create a scheme design that meets the needs of your site and end-users."]
 }
+
+
+// Для удобства, текст новостей вынес в /data/news.js
+// Чтобы не занимать много места здесь
+const news = {
+    'energy-park-becomes-a-certified-b-corporation': {
+        'date': '30th May 2025',
+        'title': 'Energy Park becomes a Certified B Corporation',
+        'text': energyParkBecomesACertifiedBCorporation
+    }
+}
