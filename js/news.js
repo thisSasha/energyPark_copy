@@ -22,10 +22,13 @@ function initNews(news, imgPath) {
 }
 
 function initNew() {
-    let newId = window.location.pathname.split('/');
-    newId = newId[newId.length - 2];
+    let url = window.location.pathname.split('/');
+    let newId = url[url.length - 2];
     if (!news[newId]) {
-        window.location.href = '/404.html';
+        newId = url[url.length - 1]
+        if (!news[newId]) {
+            window.location.href = '/404.html';
+        }
     }
 
     document.querySelector('#new_title').innerHTML = news[newId].title;
